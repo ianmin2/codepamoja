@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embedded Editor</title>
+</head>
+<body>
+    <pre class="editor" data-editor-lang="js">
+/*
+ * This is an Orion editor sample.
+ */
+function() {
+    var a = 'hi there!';
+    window.console.log(a);
+}
+</pre>
+<input type="button" id="save" value="save">
+</body>
+<link rel="stylesheet" type="text/css" href="http://eclipse.org/orion/editor/releases/current/built-editor.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://eclipse.org/orion/editor/releases/current/built-editor.min.js"></script>
+<script>
+	require(["orion/editor/edit"], function(edit) {
+		edit({className: "editor"});
+	});
+</script>
+<script>
+    $(function(){
+        
+        $("#save").on("click", function(){
+            //console.log( "CLicked" );
+            console.log( $(".editor").text() )
+        });
+        
+    });
+    
+</script>
+</html>

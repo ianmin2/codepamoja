@@ -1,0 +1,3 @@
+/*!
+    Codepamoja Aptitude Tests | Javascript
+*/

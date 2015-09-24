@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<%@page import="java.util.Date" %>
+<html>
+	<head>
+			<title>Sample Code</title>
+			<link rel="stylesheet" type="text/css" href="calc.css">
+	</head>
+
+	<body>
+<div class = "portlet Light">
+  	<div class ="row">
+  		<div class="col-lg-12 center">
+  		<div class="pull-left">
+  			<img src="./assets/images/logo.png" width="50px" alt="logo" class="logo-default"/>
+  		</div>
+  	<H1><font color="green">SIMPLE </font><font color="red">CALCULATOR</font></H1>
+  	</div>
+	</div>
+	
+	<div class="col-lg-12">
+		<div class="pull-right">
+		<%
+ 	try{
+ 		Date x = new java.util.Date();
+ 	
+ 		String name;
+ 	
+ 			if(x.getHours() > 3 && x.getHours() < 12){
+   	%>
+ 		Good Morning <font color="green"><%=request.getRemoteUser()%></font>  
+ 	
+ 	<% }
+ 
+ 			else if(x.getHours() > 12 && x.getHours() < 18){
+ 	%>
+ 	  	Good Afternoon <font color="green"><%=request.getRemoteUser()%></font>  
+	<%  }  
+
+			else if(x.getHours() > 18 || x.getHours() < 3){
+ 	%>
+ 	  	Good Evening <font color="green"><%=request.getRemoteUser()%></font> 
+	<%  }
+
+}
+finally {
+   
+}
+ %>
+		</div>
+	</div>
+  	
+   	
+ 
+  
+  <hr>
+  <div class="col-lg-12 ">
+  	<div class="col-lg-6 col-lg-offset-3 portlet colorb" >
+  		<div class="col-lg-12 center">
+  			<b><center>Select an Operator</center></b><br>
+  		</div>
+  		
+  		<div class="col-lg-12 center">
+  			<div class="col-lg-4 center">
+  				<input type="radio" id="r1" name="r1" value="add" checked>Addition</input>
+  			</div>
+  			
+  			<div class="col-lg-4 center">
+  				<input type="radio" id="r2" name="r1" value="mul">Multiplication</input>
+  			</div>
+  			
+  			<div class="col-lg-4 center">
+  				<input type="radio" id="r3" name="r1" value="div">Division</input>
+  			</div>
+  		
+  		
+  		</div>
+  	</div>
+  </div>
+
+ 
+  
+  	<div class="portlet light">
+  	<center>
+  	Value1 <input type="number" id="v1" name="v1" value="" required><br>
+  	Value2 <input type="number" id="v2" name="v2" value="" required><br>
+  	Result <input type="number" id="res" name="res" value=''><br>
+  	</center>
+	</div>
+ 
+
+<a href= "index.jsp" style="color:#f00;">Click here to get started!</a> 
+</div>
+</body>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="calc.js"></script>
+</html>
